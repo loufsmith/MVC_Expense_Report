@@ -1,0 +1,11 @@
+﻿@model Cts.Mvc.ExpenseReport.Domain.Entries
+
+@{
+    ViewBag.Title = "ItemViewModel";
+}
+
+<h2>ItemViewModel</h2>
+@Html.HiddenFor(x=> x.EntriesID)
+<div>
+    @Html.CheckBoxFor(x=> x.Billable)
+</div>

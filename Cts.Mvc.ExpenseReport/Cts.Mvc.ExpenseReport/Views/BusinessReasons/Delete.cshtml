@@ -1,0 +1,42 @@
+﻿@model Cts.Mvc.ExpenseReport.Domain.BusinessReasons
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<fieldset>
+    <legend>BusinessReasons</legend>
+    <br />
+    <div class="display-label">
+        <h4>Are you sure you want to delete the following @Html.DisplayNameFor(model => model.Reason): </h4>
+    </div>
+    <div class="row">
+        <div class="span6 alert alert-error">
+            <h4>@Html.DisplayFor(model => model.Reason)</h4>
+        </div>
+    </div>
+
+    @if (ViewBag.ErrorMessage != null)
+    {
+        <div class="row">
+            <div class="span6 alert alert-warning">
+                <ul>
+                    <li>@ViewBag.ErrorMessage</li>
+                </ul>                
+            </div>
+        </div>
+    }
+
+    <br />
+</fieldset>
+@using (Html.BeginForm())
+{
+    <div>
+        <p>
+            <button type="submit" value="Delete" class="btn btn-danger">Delete</button>
+            <a href="@Url.Action("/Index")" role="button" class="btn btn-default">Cancel</a>
+        </p>
+    </div>
+}

@@ -1,0 +1,17 @@
+﻿@*@model Cts.Mvc.ExpenseReport.Domain.ExpenseReports*@
+
+@Html.ActionLink("Expense Reporting System 3000", "Index", "Entries", new { @class = "brand" })
+<ul class="nav nav-pills">
+    <li>@Html.ActionLink("Expense Report", "Index", "Entries")</li>
+    <li class="dropdown">
+        <a class="dropdown-toggle" id="drop4" role="button" data-toggle="dropdown" href="#">Admin <b class="caret"></b></a>
+        <ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop4">
+            <li>@Html.ActionLink("Business Reasons", "Index", "BusinessReasons")</li>
+            <li>@Html.ActionLink("Clients", "Index", "Clients")</li>
+            <li>@Html.ActionLink("Employees", "Index", "Employees")</li>
+            <li>@Html.ActionLink("Expense Categories", "Index", "ExpenseCategories")</li>
+            <li>@Html.ActionLink("Projects", "Index", "Projects")</li>
+            <li>@Html.ActionLink("Titles", "Index", "Titles")</li>
+        </ul>
+    </li>
+</ul>

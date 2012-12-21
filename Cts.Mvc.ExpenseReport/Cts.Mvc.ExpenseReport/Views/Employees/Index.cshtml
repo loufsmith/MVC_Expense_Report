@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Cts.Mvc.ExpenseReport.Domain.Employees>
+
+@{
+    ViewBag.Title = "Employees";
+}
+
+<h2>Employees</h2>
+
+<p>
+    <a href="@Url.Action("/Create")" role="button" class="btn btn-default">Add Employee</a>
+</p>
+<div class="row-fluid">
+    <div class="span6">
+        <table class="table table-striped table-condensed table-bordered">
+            <tr>
+                <th width="2%"></th>
+                <th width="40%">
+                    @Html.ActionLink("Employee", "Index", new { sortOrder = "Employee"})
+                </th>
+                <th width= "20%">
+                    @Html.ActionLink("Employee #", "Index", new { sortOrder = "EmployeeID"})
+                </th>
+                <th width="38%">
+                    Title
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <a href="@Url.Action("Delete", new { id = item.EmployeesID })"><i class="icon-trash" title="Delete"></i></a>
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Edit", new { id = item.EmployeesID })">@Html.DisplayFor(modelItem => item.LastName), @Html.DisplayFor(modelItem => item.FirstName) </a>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EmployeesID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Titles.Title)
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+    </div>
+</div>

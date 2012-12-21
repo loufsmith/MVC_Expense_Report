@@ -1,0 +1,122 @@
+﻿@model Cts.Mvc.ExpenseReport.Domain.Entries
+
+@{
+    ViewBag.Title = "Delete Entry";
+}
+
+<h2>Delete Entry</h2>
+
+<h3>Are you sure you want to delete entry #@Html.DisplayFor(model => model.EntriesID)?</h3>
+<fieldset>
+<legend>Entries</legend>
+@Html.HiddenFor(model => model.EntriesID, "EntriesID")
+
+    <div class="row">
+        <div class="span3">
+
+            <div class="display-label">
+                <b>@Html.DisplayNameFor(model => model.ProjectsID)</b>
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Project.Project)
+            </div>
+            <br />
+            <div class="display-label">
+                <b>@Html.DisplayNameFor(model => model.ExpenseID)</b>
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.ExpenseID)
+            </div>
+            <br />
+            <div class="display-label">
+                <b>@Html.DisplayNameFor(model => model.NumPeople)</b>
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.NumPeople)
+            </div>
+            <br />
+            <div class="display-label">
+                <b>@Html.DisplayNameFor(model => model.Amount)</b>
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Amount)
+            </div>
+            <br />
+        </div>
+        <div class="span3">
+            <div class="display-label">
+                <b>@Html.DisplayNameFor(model => model.ExpenseCategoriesID)</b>
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Category.Category)
+            </div>
+            <br />
+
+            <div class="display-label">
+                <b>@Html.DisplayNameFor(model => model.DateIncurred)</b>
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.DateIncurred)
+            </div>
+            <br />
+
+            <div class="display-label">
+                <b>@Html.DisplayNameFor(model => model.Guests)</b>
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Guests)
+            </div>
+            <br />
+
+            <div class="display-label">
+                <b>@Html.DisplayNameFor(model => model.Miles)</b>
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Miles)
+            </div>
+        </div>
+        <div class="span3">
+
+            <div class="display-label">
+                <b>@Html.DisplayNameFor(model => model.BusinessReasonsID)</b>
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Reason.Reason)
+            </div>
+            <br />
+
+            <div class="display-label">
+                <b>@Html.DisplayNameFor(model => model.Vendor)</b>
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Vendor)
+            </div>
+            <br />
+
+            <div class="display-label">
+                <b>@Html.DisplayNameFor(model => model.Affiliation)</b>
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Affiliation)
+            </div>
+            <br />
+
+            <div class="display-label">
+                <b>@Html.DisplayNameFor(model => model.Mileage)</b>
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Mileage)
+            </div>
+            <br />
+        </div>
+    </div>
+</fieldset>
+@using (Html.BeginForm())
+{
+    <div>
+        <p>
+            <button type="submit" value="Delete" class="btn btn-danger">Delete</button>
+            <a href="@Url.Action("/Index")" role="button" class="btn btn-default">Cancel</a>
+        </p>
+    </div>
+}

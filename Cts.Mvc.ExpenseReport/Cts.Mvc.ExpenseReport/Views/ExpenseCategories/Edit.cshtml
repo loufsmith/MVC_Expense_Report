@@ -1,0 +1,32 @@
+﻿@model Cts.Mvc.ExpenseReport.Domain.ExpenseCategories
+
+@{
+    ViewBag.Title = "Edit Category";
+}
+
+<h2>Edit Category</h2>
+
+@using (Html.BeginForm()) {
+    
+    <div>
+        @Html.Partial("_ValidationError")
+    </div>
+
+    <fieldset>
+        <legend>ExpenseCategories</legend>
+
+        @Html.HiddenFor(model => model.ExpenseCategoriesID)
+        
+        <div>
+            @Html.Partial("_ExpenseCategoriesDetail")
+        </div> 
+        
+        <div>
+            @Html.Partial("_SaveCancel")
+        </div> 
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

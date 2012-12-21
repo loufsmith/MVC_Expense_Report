@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Cts.Mvc.ExpenseReport.Domain.Entries>
+
+@{
+    ViewBag.Title = "Expenses";
+}
+
+<h2>Expenses</h2>
+
+@using (Html.BeginForm("Index", "Entries", FormMethod.Post))
+{ 
+    <fieldset>
+        <legend>Employees</legend>
+        <div class="form-inline">
+            @Html.DropDownList("EmployeesList", "Employee...")
+            &nbsp;
+            From: @Html.TextBox("DateFrom", "", new { @class = "datepicker", @readonly = "true", style = "width:100px" })
+            &nbsp;
+            To: @Html.TextBox("DateTo", "", new { @class = "datepicker", @readonly = "true", style = "width:100px" })
+            &nbsp;
+            <button type="button" class="btn btn-primary search" id="search">Search</button>
+        </div>
+        
+        <br />
+        <div class="row">
+            <div class="span4">
+                <div class="alert alert-error errorMessage" style="display: none">
+                    <ul>
+                        <b>
+                            <li class="employeeError" style="display: none">
+                                @Html.ValidationMessage("DateFrom", "Employee must be selected", new { style = "display:none", @class = "employeeError" })
+                            </li>
+                            <li class="dateError" style="display: none">
+                                @Html.ValidationMessage("DateFrom", "From date must be before To date", new { style = "display:none", @class = "dateError" })
+                            </li>
+                        </b>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span3">
+                <div>
+                    <a href="@Url.Action("Create")" role="button" class="btn btn-default">Create Expense</a>
+                </div>
+            </div>
+        </div>
+        <div id="target">
+            @{ Html.RenderPartial("EntriesByEmployee");  }
+        </div>
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/fieldfunctions")
+}

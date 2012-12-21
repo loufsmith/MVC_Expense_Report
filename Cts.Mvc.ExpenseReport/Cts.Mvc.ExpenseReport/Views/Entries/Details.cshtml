@@ -1,0 +1,99 @@
+﻿@model Cts.Mvc.ExpenseReport.Domain.Entries
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Entries</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ExpenseID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ExpenseID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DateIncurred)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DateIncurred)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Guests)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Guests)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NumPeople)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NumPeople)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Affiliation)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Affiliation)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Vendor)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Vendor)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ProjectID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ProjectID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ReasonID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ReasonID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CategoryID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CategoryID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Amount)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Amount)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Miles)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Miles)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Mileage)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Mileage)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.EntriesID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

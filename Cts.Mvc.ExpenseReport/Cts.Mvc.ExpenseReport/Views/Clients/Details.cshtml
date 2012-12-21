@@ -1,0 +1,22 @@
+﻿@model Cts.Mvc.ExpenseReport.Domain.Clients
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Clients</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Client)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Client)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ClientsID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

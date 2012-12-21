@@ -1,0 +1,9 @@
+﻿@model Cts.Mvc.ExpenseReport.Domain.BusinessReasons
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Reason)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Reason)
+    @Html.ValidationMessageFor(model => model.Reason, "*")
+</div>

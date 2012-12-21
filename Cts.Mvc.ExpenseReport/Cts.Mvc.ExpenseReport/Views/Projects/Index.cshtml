@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Cts.Mvc.ExpenseReport.Domain.Projects>
+
+@{
+    ViewBag.Title = "Projects";
+}
+@*<div class="container-fluid">*@
+<h2>Projects</h2>
+
+<p>
+    @*<li class="btn btn-default">@Html.ActionLink("Add Project", "Create")</li>*@
+    <a href="@Url.Action("/Create")" role="button" class="btn btn-default">Add Project</a>
+</p>
+<div class="row-fluid">
+    <div class="span6">
+        <table class="table table-striped table-condensed table-bordered">
+            <tr>
+                <th width="2%"></th>
+                <th width="40%">
+                    @Html.ActionLink("Project", "Index", new { sortOrder = "Project" })
+                </th>
+                <th width="15%">
+                    @Html.ActionLink("Project #", "Index", new { sortOrder = "ProjectID" })
+                </th>
+                <th width="43%">
+                    @*@Html.ActionLink("Client", "Index", new { sortOrder = "Client"})*@
+                    Client
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>
+                        <a href="@Url.Action("Delete", new { id = item.ProjectsID })"><i class="icon-trash" title="Delete"></i></a>
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Edit", new { id = item.ProjectsID })">@Html.DisplayFor(modelItem => item.Project)</a>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProjectsID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Clients.Client)
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

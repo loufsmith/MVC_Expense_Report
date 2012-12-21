@@ -1,0 +1,36 @@
+﻿@model Cts.Mvc.ExpenseReport.Domain.Titles
+
+@{
+    ViewBag.Title = "Edit Title";
+}
+
+<h2>Edit Title</h2>
+
+@using (Html.BeginForm()) {
+    
+    <div>
+        @Html.Partial("_ValidationError")
+    </div>
+
+    <fieldset>
+        <legend>Titles</legend>
+
+        @Html.HiddenFor(model => model.TitlesID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Title)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Title)
+            @Html.ValidationMessageFor(model => model.Title)
+        </div>
+        
+        <div>
+            @Html.Partial("_SaveCancel")
+        </div> 
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

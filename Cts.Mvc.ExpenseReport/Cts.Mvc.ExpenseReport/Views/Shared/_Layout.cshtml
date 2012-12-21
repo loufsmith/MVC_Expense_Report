@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>CTS Expense Report</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="container-fluid">
+    <div class="page">
+        <header>
+            <div class="container">
+                <br />
+                <div class="navbar navbar-fixed-top">
+                    <div class="navbar-inner">
+                        <div>
+                            @Html.Partial("_Navbar")
+                        </div>
+                        <div class="pull-right">
+                            @Html.Partial("_LoginPartial")
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <br>
+        <div id="main">
+            @RenderBody()
+        </div>
+        <div class="float-left">
+            <p>&copy; @DateTime.Now.Year - CTS Expense Report</p>
+        </div>
+
+        @Styles.Render("~/Content/css", "~/Content/themes/base/css")
+        @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/jqueryui")
+        @Scripts.Render("~/bundles/jqueryval")
+        @RenderSection("scripts", required: false)
+    </div>
+</body>
+</html>

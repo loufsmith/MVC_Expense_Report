@@ -1,0 +1,31 @@
+﻿@model Cts.Mvc.ExpenseReport.Domain.Entries
+
+@{
+    ViewBag.Title = "Edit Expense";
+}
+
+<h2>Edit Expense</h2>
+
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.Partial("_ValidationError")
+    </div>
+
+    <fieldset>
+        <legend>Entries</legend>
+        @Html.HiddenFor(model => model.EntriesID, "EntriesID")
+        
+        <div>
+            @Html.Partial("_EntryDetails")
+        </div> 
+        
+        <div>
+            @Html.Partial("_SaveCancel")
+        </div> 
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/fieldfunctions")
+}

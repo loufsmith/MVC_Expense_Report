@@ -1,0 +1,34 @@
+﻿@model Cts.Mvc.ExpenseReport.Domain.Clients
+
+@{
+    ViewBag.Title = "Edit Client";
+}
+
+<h2>Edit Client</h2>
+
+@using (Html.BeginForm()) {
+    
+    <div>
+        @Html.Partial("_ValidationError")
+    </div>
+
+    <fieldset>
+        <legend>Clients</legend>
+
+        @Html.HiddenFor(model => model.ClientsID)
+        
+        <div>
+            @Html.Partial("_ClientsDetail")
+        </div> 
+        
+        <div>
+            @Html.Partial("_SaveCancel")
+        </div> 
+    </fieldset>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/fieldfunctions")
+}

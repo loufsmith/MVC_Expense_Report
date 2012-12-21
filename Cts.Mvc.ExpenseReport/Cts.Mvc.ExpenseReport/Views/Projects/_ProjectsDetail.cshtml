@@ -1,0 +1,18 @@
+﻿@model Cts.Mvc.ExpenseReport.Domain.Projects
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Project)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Project)
+            @Html.ValidationMessageFor(model => model.Project, "*")
+        </div>
+
+        <div class="editor-label">
+            Client:
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(c => c.ClientsID, ViewBag.ClientsList as SelectList, "Please select a Client...")
+            @Html.ValidationMessageFor(model => model.Clients.ClientsID, "*")
+        </div>

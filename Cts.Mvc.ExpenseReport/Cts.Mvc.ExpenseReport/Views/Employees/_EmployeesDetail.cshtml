@@ -1,0 +1,26 @@
+﻿@model Cts.Mvc.ExpenseReport.Domain.Employees
+
+
+<div class="editor-label">
+    Last Name:
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.LastName)
+    @Html.ValidationMessageFor(model => model.LastName, "*")
+</div>
+
+<div class="editor-label">
+    First Name:
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.FirstName)
+    @Html.ValidationMessageFor(model => model.FirstName, "*")
+</div>
+
+<div class="editor-label">
+    Title: 
+</div>
+<div class="editor-field">
+    @Html.DropDownListFor(t => t.TitlesID, ViewBag.TitleList as SelectList, "Please select a Title...")
+    @Html.ValidationMessageFor(model => model.Titles.Title, "*")
+</div>

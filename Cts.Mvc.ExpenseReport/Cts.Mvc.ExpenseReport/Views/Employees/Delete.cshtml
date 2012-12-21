@@ -1,0 +1,39 @@
+﻿@model Cts.Mvc.ExpenseReport.Domain.Employees
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this Employee?</h3>
+<fieldset>
+    <legend>Employees</legend>
+    @Html.HiddenFor(model => model.EmployeesID, "EmployeeID")
+
+    <div class="row">
+        <div class="span6 alert alert-error">
+           <h4>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName) -  @Html.DisplayFor(model => model.Titles.Title)<h4>
+        </div>
+    </div>
+
+    @if (ViewBag.ErrorMessage != null)
+    {
+        <div class="row">
+            <div class="span6 alert alert-warning">
+                <ul>
+                    <li>@ViewBag.ErrorMessage</li>
+                </ul>                
+            </div>
+        </div>
+    }
+</fieldset>
+@using (Html.BeginForm())
+{
+    <div>
+        <p>
+            <button type="submit" value="Delete" class="btn btn-danger">Delete</button>
+            <a href="@Url.Action("/Index")" role="button" class="btn btn-default">Cancel</a>
+        </p>
+    </div>
+}
